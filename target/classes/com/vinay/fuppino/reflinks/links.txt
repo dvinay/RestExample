@@ -1,0 +1,18 @@
+
+http://localhost:8080/messenger/webapi/messages
+
+http://localhost:8080/messenger/webapi/messages?year=2017
+
+http://localhost:8080/messenger/webapi/messages?start=1&size=1
+
+http://localhost:8080/messenger/webapi/injectdemo/annotations;matrixparam=value
+
+http://localhost:8080/messenger/webapi/injectdemo/annotations;matrixparam=value?queryparam=sample
+
+http://localhost:8080/messenger/webapi/injectdemo/context;matrixparam:value
+
+messages
+	-> rest calls for message information
+	
+profiles
+	-> rest calls for profile calls
