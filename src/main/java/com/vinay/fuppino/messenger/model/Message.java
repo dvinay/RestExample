@@ -26,6 +26,15 @@ public class Message {
 		this.message = message;
 		this.created = new Date();
 		this.author = author;
+		generateComments();
+	}
+
+	private void generateComments() {
+		comments.put(1L, new Comment(1, "Hi", "Kaushik"));
+		comments.put(2L, new Comment(2, "Lol", "Vinay"));
+		comments.put(3L, new Comment(3, "Sample", "Vikram"));
+		comments.put(4L, new Comment(4, "nice", "Vinel"));
+		comments.put(5L, new Comment(5, "temp", "Vinath"));		
 	}
 
 	public long getId() {
