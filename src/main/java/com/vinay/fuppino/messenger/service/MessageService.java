@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.vinay.fuppino.messenger.database.DatabaseClass;
+import com.vinay.fuppino.messenger.exception.DataNotFoundException;
 import com.vinay.fuppino.messenger.model.Message;
 
 public class MessageService {
@@ -42,10 +43,11 @@ public class MessageService {
 	}
 
 	public Message getMessage(Long id) {
-		if (id <= messages.size()) {
-			return messages.get(id);
+		Message message = messages.get(id);
+		if (null == message) {
+			throw new DataNotFoundException("Message with id "+ id + " not found"); 
 		}
-		return null;
+		return message;
 	}
 
 	public Message addMessage(Message message) {
