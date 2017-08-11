@@ -22,8 +22,10 @@ import com.vinay.fuppino.messenger.resources.bean.MessageFilterBean;
 import com.vinay.fuppino.messenger.service.MessageService;
 
 @Path("messages")
-@Consumes(MediaType.APPLICATION_JSON)
-@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON) //Content-Type
+@Produces(value = {MediaType.APPLICATION_JSON, MediaType.TEXT_XML}) //Accept
+//look header name -> Accept and give xml or json response       => what format client accept
+//look header name -> Content-Type and give xml or json response => what format client sending data
 public class MessageResource {
 	
 	private MessageService messageService = new MessageService();
